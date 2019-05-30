@@ -62,7 +62,7 @@ Ardent Apalone (December 2017 - December 2018)
 |    arm64     |          X            |                              |                        |
 +--------------+-----------------------+------------------------------+------------------------+
 
-Minumum language requirements:
+Minimum language requirements:
 
 - C11 [2]_
 - C++14
@@ -140,7 +140,7 @@ Targeted platforms:
 " [s] " Compilation from source, the ROS buildfarm will not produce any binary packages for these platforms.
 
 
-Minumum language requirements:
+Minimum language requirements:
 
 - C11 [2]_
 - C++14
@@ -241,7 +241,7 @@ Middleware Implementation Support:
 Middleware implementation support is dependent upon the platform support tier.
 For example a Tier 1 middleware implementation on a Tier 2 platform can only receive Tier 2 support.
 
-Minumum language requirements:
+Minimum language requirements:
 
 - C11 [2]_
 - C++14
@@ -313,15 +313,18 @@ Dashing Diademata (May 2019 - May 2021)
 
 Targeted platforms:
 
-+--------------+-----------------------+------------------------------+------------------------+------------------------+
-| Architecture | Ubuntu Bionic (18.04) |     MacOS Sierra (10.12)     |   Windows 10 (VS2019)  | Debian Stretch (9) [s] |
-+==============+=======================+==============================+========================+========================+
-|    amd64     |        Tier 1         |           Tier 2*            |          Tier 1*       |        Tier 3          |
-+--------------+-----------------------+------------------------------+------------------------+------------------------+
-|    arm64     |        Tier 1         |                              |                        |        Tier 3          |
-+--------------+-----------------------+------------------------------+------------------------+------------------------+
-|    arm32     |        Tier 2         |                              |                        |        Tier 3          |
-+--------------+-----------------------+------------------------------+------------------------+------------------------+
++---------------+-----------------------+----------------------+---------------------+------------------------+---------------------------------+
+| Architecture  | Ubuntu Bionic (18.04) | MacOS Sierra (10.12) | Windows 10 (VS2019) | Debian Stretch (9) [s] | OpenEmbedded/webOS Robotics [s] |
++===============+=======================+======================+=====================+========================+=================================+
+|     amd64     |        Tier 1         |       Tier 2*        |       Tier 1*       |         Tier 3         |                                 |
++---------------+-----------------------+----------------------+---------------------+------------------------+---------------------------------+
+|     arm64     |        Tier 1         |                      |                     |         Tier 3         |                                 |
++---------------+-----------------------+----------------------+---------------------+------------------------+---------------------------------+
+|     arm32     |        Tier 2         |                      |                     |         Tier 3         |             Tier 3              |
++---------------+-----------------------+----------------------+---------------------+------------------------+---------------------------------+
+| qemu          |                       |                      |                     |                        |             Tier 3              |
+| x86/x64/arm64 |                       |                      |                     |                        |                                 |
++---------------+-----------------------+----------------------+---------------------+------------------------+---------------------------------+
 
 
 " * " Individual binary packages are not currently available for these platforms.
@@ -346,7 +349,7 @@ Middleware Implementation Support:
 Middleware implementation support is dependent upon the platform support tier.
 For example a Tier 1 middleware implementation on a Tier 2 platform can only receive Tier 2 support.
 
-Minumum language requirements:
+Minimum language requirements:
 
 - C++14
 - Python 3.5
@@ -386,6 +389,9 @@ Dependency Requirements:
 | OpenSplice  |                                  6.9.190403OSS                        |
 +-------------+----------------+---------------+----------------+---------------------+
 
+`OpenEmbedded Requirements
+<https://www.yoctoproject.org/docs/2.6/ref-manual/ref-manual.html#ref-manual-system-requirements>`_
+
 " * " means that this is not the upstream version (available on the official Operating System repositories) but a package distributed by OSRF or the community (package built and distributed on custom repositories).
 
 " ** " Rolling distributions will see multiple version changes of these dependencies during their lifetime.
@@ -401,6 +407,7 @@ Package manager use for dependencies:
 - Ubuntu, Debian: apt
 - MacOS: Homebrew, pip
 - Windows: Chocolatey, pip
+- OpenEmbedded: rpm, deb, ipk
 
 
 Build System Support:
